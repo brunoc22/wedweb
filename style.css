@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     border: 0;
-    font-family: 'Oswald';
+    font-family: 'Hahmlet', sans-serif;;
 }
 
 html {
@@ -13,19 +13,27 @@ html {
 :root {
     --img-width-up: 281px;
     --img-width-lie: 890px;
-    --img-width-margin-top: 70px;
+    --img-width-square: 500px;
+    --img-width-margin-top: 50px;
     --img-width-margin-left: 20px;
+    --color-primary-caramel: rgb(249, 209, 153);
+    --color-primary-sand: rgb(253, 216, 181);
+    --color-primary-bege: rgb(246, 227, 212);
+    --color-primary-lblue: rgb(187, 219, 247);
+    --color-primary-mblue: rgb(146, 196, 238);
+    --color-primary-sea: rgb(0, 77, 192);
+    --color-sec-success: #008A00;
 }
 
 /* Sections */
 section {
     min-height: 50vh;
     width: 100%;
-    background: rgb(116, 149, 225);
     display: grid;
     align-content: center;
     justify-content: center;
-    padding: 5% 0;
+    padding: 2% 0;
+    position: relative;
 }
 section .container {
     width: 100%;
@@ -39,13 +47,14 @@ h1{
 
 section .container .title{
     text-align: center;
+    font-family: 'Merienda';
 }
 
 section .container .sectionText{
     width: 60%;
     align-self: center;
     justify-self: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 3%;
 }
 
@@ -56,19 +65,20 @@ section.header {
     padding: 0 !important;
 }
 
-.headerBG {
-    min-height: 100vh;
+.header .headerBG {
+    min-height: 130vh;
     width: 100%;
-    background: url(images/BeachWedding.jpg);
+    background: url("images/s21.jpg");
     background-position: center;
     background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -30;
+    z-index: 2;
+    background-repeat: no-repeat;
 }
 
-.headerOL {
+.header .headerOL {
     min-height: 100vh;
     width: 100%;
     background: rgba(0,0,0, 0.6);
@@ -76,7 +86,7 @@ section.header {
     background-size: cover;
     position: absolute;
     top:0;
-    z-index: 50;
+    z-index: 3;
 }
 
 .header video {
@@ -137,7 +147,7 @@ nav {
 }
 
 .nav-links {
-    width: max-content;
+    width: min-content;
 }
 
 .nav-links a {
@@ -146,13 +156,19 @@ nav {
     font-size: 20px;
     vertical-align: top;
     display: grid;
-    grid-template-columns: 50px 1fr;
+    grid-template-columns: 40px 1fr;
     align-items: center;
     margin: 20px 0;
     padding: 0 7px;
-    border-radius: 8px;
+    border-radius: 25px;
     background-color: none;
     transition: 350ms;
+}
+
+.nav-links a span{
+    font-family: 'Merienda';
+    margin-left: 5px;
+    text-shadow: 0 0 2px black, 0 0 4px black;
 }
 
 .nav-links a:hover {
@@ -165,34 +181,430 @@ nav {
     background-color: white;
 }
 
-.nav-links a.current .ringIcon {
+.nav-links a.current span, .nav-links a:hover span{
+    text-shadow: 0 0 0 black;
+    font-weight: bold;
+}
+
+.nav-links a.current .menuIcon {
     transform: rotateY(360deg);
 }
 
-.nav-links .ringIcon {
+.nav-links .menuIcon {
     width: 40px;
     height: 40px;
-    background-image: url("images/ring.png");
     background-size: cover;
     transition: transform .7s ease-in-out;
 }
 
+.nav-links .homeIcon {
+    background-image: url("images/homeIcon.png");
+}
+
+.nav-links .storyIcon {
+    background-image: url("images/storyIcon.png");
+}
+
+.nav-links .dreamIcon {
+    background-image: url("images/dreamIcon.png");
+}
+
+.nav-links .weddingIcon {
+    background-image: url("images/ring.png");
+}
+
+.nav-links .honeymoonIcon {
+    background-image: url("images/honeymoonIcon.png");
+}
+
+.nav-links .galeryIcon {
+    background-image: url("images/galeryIcon.png");
+}
+
+.nav-links .rsvpIcon {
+    background-image: url("images/rsvpIcon.png");
+}
+
+.hamburger{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 2rem;
+    padding: 2% 2%;
+    margin: 4% 4%;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    .hamburger {
+        display: flex;
+    }
+    .mainTitle {
+        padding: 0 15%;
+        width: 70%;
+    }
+
+    .nav-links a span{
+        display: none;
+    }
+
+    nav#menu.open{
+        background-color: white;
+    }
+
+    nav#menu.open a span{
+        display: block;
+    }
+  }
+
+/* HISTORY */
+
+section.history {
+    background-color: var(--color-primary-sand);
+    z-index: 10;
+}
+
+.history .pergaminho{
+    background-image: url("images/pergaminho.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 800px;
+    height: 600px;
+    opacity: 0.3;
+    margin: 50px;
+    z-index: 4;
+}
+
+.history .title{
+    text-align: center;
+    padding: 10px;
+    color: var(--color-primary-sea);
+    text-shadow: 4px 4px 2px var(--color-primary-mblue), 4px 4px 4px var(--color-primary-mblue);
+}
+
+.historyText p{
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: justify;
+    text-indent: 5ch;
+    z-index: 5;
+}
+
+/* DREAM */
+
+section.dream {
+    color: white;
+    position: relative;
+}
+
+.dream .title{
+    text-align: center;
+    padding: 10px;
+    text-shadow: 4px 4px 2px black, 4px 4px 4px black;
+}
+
+.dream .dreamBG{
+    background: url(images/BeachWedding.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 3;
+    width: 100%;
+    height: 110vh;
+    top: -100vh;
+    left: 0;
+    position: absolute;
+}
+
+.dream .headerOL {
+    min-height: 100%;
+    width: 100%;
+    background: rgba(0,0,0, 0.6);
+    background-position: center;
+    background-size: cover;
+    z-index: 5;
+    position: absolute;
+}
+
+.dreamText p{
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: justify;
+    text-indent: 5ch;
+    z-index: 500;
+}
+
+/* WEDDING */
+
+section.wedding {
+    background: var(--color-primary-lblue);
+    z-index: 10;
+}
+
+section.wedding .title{
+    color: var(--color-primary-caramel);
+    text-shadow: 4px 4px 2px var(--color-primary-sea), 4px 4px 4px var(--color-primary-sea);
+}
+
+.wedding .weddingText{
+    display: grid;
+    grid-template-rows: 1fr 1px 1fr;
+    grid-template-columns: 1fr 1px 1fr;
+    row-gap: 50px;
+    column-gap: 50px;
+    margin: 50px;
+}
+
+.wedding .linhaVertical, .wedding .linhaHorizontal{
+    border: 2px solid var(--color-primary-sand);
+    border-radius: 20px;
+    width: 75%;
+    height: 75%;
+    align-self: center;
+    justify-self: center;
+    background: var(--color-primary-sand);
+}
+
+.wedding .gridBox{
+    position: relative;
+}
+
+.wedding .gridTitle{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.7rem;
+    color: var(--color-primary-caramel);
+    text-shadow: 0px 0px 2px var(--color-primary-sea), 0px 0px 4px var(--color-primary-sea);
+}
+
+.wedding .gridText{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+.wedding .weddingBG{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+}
+
+.wedding .conceptBG{
+    background-image: url("images/iconStarfish.png");
+}
+
+.wedding .partyBG{
+    background-image: url("images/iconParty.png");
+}
+
+.wedding .wherewhenBG{
+    background-image: url("images/iconCalendar.png");
+}
+
+.wedding .dresscodeBG{
+    background-image: url("images/iconDress.png");
+}
+
+.wedding .mapLink{
+    display: grid;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    color: var(--color-primary-sea);
+    justify-content: center;
+    text-decoration: underline;
+}
+
+.wedding .mapLink a{
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.wedding .comochegar{
+    width: 60%;
+    justify-self: center;
+    height: auto;
+    max-height: 0;
+    transition: max-height 1s ease-in-out, padding 1s ease-in-out;
+    overflow: hidden;
+    background-color: var(--color-primary-sand);
+    border-radius: 20px;
+    padding: 0;
+}
+
+.wedding .comochegar.visible{
+    max-height: 1000px;
+}
+
+
+.wedding .comochegarGrid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:  auto 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin: 25px;
+}
+
+.wedding .placaTexto{
+    grid-column: 1 / span 4;
+    font-size: 1.1rem;
+    text-indent: 3ch;
+}
+
+.wedding .placas1Cont{
+    grid-column: 1 / span 2;
+    justify-self: center;
+}
+
+.wedding .placas2Cont{
+    grid-column: 3 / span 2;
+    justify-self: center;
+}
+
+.wedding .placa{
+    width: 400px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+    grid-column: 1 / span 4;
+}
+
+.wedding .placa1{
+    background-image: url("images/placa1.JPG");
+}
+
+.wedding .placa2{
+    background-image: url("images/placa2.JPG");
+}
+
+.wedding .mapText{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.wedding .mapQRcode{
+    width: 300px;
+    height: 300px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("images/PNVqr.png");
+}
+
+.wedding .mapCont {
+    grid-column: 2 / span 3;
+}
+
+.wedding #map {
+    height: 300px;
+    width: 100%;
+    border: 0;
+}
+
+
+/* HONEYMOON */
+
+section.honeymoon {
+    color: white;
+    position: relative;
+}
+
+.honeymoon .title{
+    text-align: center;
+    padding: 10px;
+    text-shadow: 4px 4px 2px black, 4px 4px 4px black;
+}
+
+.honeymoon .honeymoonBG{
+    background: url(images/honeymoon.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 2;
+    width: 100%;
+    height: 150vh;
+    top: -200vh;
+    left: 0;
+    position: absolute;
+}
+
+.honeymoon .headerOL {
+    min-height: 100%;
+    width: 100%;
+    background: rgba(0,0,0, 0.6);
+    background-position: center;
+    background-size: cover;
+    z-index: 5;
+    position: absolute;
+}
+
+.honeymoon .honeymoonText p{
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: justify;
+    text-indent: 5ch;
+    z-index: 500;
+}
+
+.honeymoon .mb{
+    width: 60%;
+    justify-self: center;
+    align-self: center;
+}
+
+.honeymoon .mb > div{
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.honeymoon .mb .mbIcon{
+    width: 60px;
+    height: 50px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.honeymoon .mb .mbancoIcon{
+    background-image: url("images/mbanco.png");
+}
+
+.honeymoon .mb .mbwayIcon{
+    background-image: url("images/mbway.png");
+}
 
 /* GALERY */
 
 section.galery {
-    background-color: black;
+    background-color: var(--color-primary-mblue);
+    z-index: 10;
 }
 
 .galery .title{
     text-align: center;
     padding: 10px;
-    color: white;
+    color: var(--color-primary-caramel);
+    text-shadow: 4px 4px 2px var(--color-primary-sea), 4px 4px 4px var(--color-primary-sea);
 }
 
 .galery .galleryTrack{
     width: 80%;
-    height: 700px;
+    height: 600px;
     overflow: hidden;
     align-self: center;
     justify-self: center;
@@ -202,9 +614,9 @@ section.galery {
 .galleryTrack::before,.galleryTrack::after{
     content: '';
     position: absolute;
-    height: 700px;
+    height: 600px;
     width: 15%;
-    background: linear-gradient(to right, black 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(to right, var(--color-primary-mblue) 0%, rgba(0, 0, 0,0) 100%);
     z-index: 100;
 }
 
@@ -220,10 +632,10 @@ section.galery {
 .galery .gallerySlider{
     display: flex;
     height: 100%;
-    width: calc(calc(calc(var(--img-width-up) + calc(2 * var(--img-width-margin-left))) * 8) + calc(calc(var(--img-width-lie) + calc(2 * var(--img-width-margin-left))) * 10));
-    animation: galeryScroll 150s infinite linear;
+    width: calc(calc(calc(var(--img-width-up) + calc(2 * var(--img-width-margin-left))) * 6) + calc(calc(var(--img-width-lie) + calc(2 * var(--img-width-margin-left))) * 17) + calc(calc(var(--img-width-square) + calc(2 * var(--img-width-margin-left))) * 1));
+    animation: galeryScroll 250s infinite linear;
 }
-.galery .gallerySlider:hover{
+.galery .galleryTrack:hover .gallerySlider{
     animation-play-state: paused;
 }
 
@@ -231,8 +643,9 @@ section.galery {
     height: 500px;
     margin: var(--img-width-margin-top) var(--img-width-margin-left);
     object-fit: cover;
-    -webkit-box-shadow: 0px 0px 11px 9px rgba(0,0,0,0.53); 
-    box-shadow: 0px 0px 11px 9px rgba(0,0,0,0.53);
+    -webkit-box-shadow: 15px 15px 7px 0px var(--color-primary-);
+    -moz-box-shadow: 15px 15px 7px 0px var(--color-primary-sea);
+    box-shadow: 15px 15px 7px 0px var(--color-primary-sea);
     transition: transform 1s ease-in-out;
 }
 
@@ -244,6 +657,10 @@ section.galery {
     width: var(--img-width-lie);
 }
 
+.galery .gallerySlider img.square{
+    width: var(--img-width-square);
+}
+
 .galery .gallerySlider img:hover{
     transform: scale(1.3);
 }
@@ -253,7 +670,7 @@ section.galery {
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(calc(calc(calc(var(--img-width-up) + calc(2 * var(--img-width-margin-left))) * -5) + calc(calc(var(--img-width-lie) + calc(2 * var(--img-width-margin-left))) * -9)));
+        transform: translateX(calc(calc(calc(var(--img-width-up) + calc(2 * var(--img-width-margin-left))) * -6) + calc(calc(var(--img-width-lie) + calc(2 * var(--img-width-margin-left))) * -14) + calc(calc(var(--img-width-square) + calc(2 * var(--img-width-margin-left))) * -1)));
     }
 
 }
@@ -261,41 +678,60 @@ section.galery {
 /* RSVP */
 
 section.rsvp {
-    background-color: rgb(214,187,110);
+    background-color: var(--color-primary-sand);
+    z-index: 10;
+}
+
+.rsvp .container{
+    margin-bottom: 50px;
+    width: 50%;
+    min-width: 400px;
+    justify-self: center;
 }
 
 .rsvp .title{
     text-align: center;
     padding: 10px;
+    color: var(--color-primary-sea);
+    text-shadow: 4px 4px 2px var(--color-primary-mblue), 4px 4px 4px var(--color-primary-mblue);
 }
 
 form{
     display: grid;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 form .formField{
     display: grid;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 form textarea{
     padding: 3%;
     resize: none;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 form input{
     padding: 3%;
     border-radius: 5px;
+    font-size: 1rem;
+}
+
+form .form-submit{
+    display: grid;
 }
 
 form button{
-    background-color: #d97a34;
+    background-color: rgb(0, 77, 192);
     font-size: 18px;
     justify-self: right;
     padding: 5px 21px;
     border-radius: 5px;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
 }
 
 form .sendSuccess{
@@ -305,7 +741,7 @@ form .sendSuccess{
 }
 
 form .sendSuccess span{
-    color: #008A00;
+    color: var(--color-sec-success);
 }
 
 .rsvpInfo{
@@ -315,9 +751,9 @@ form .sendSuccess span{
 
 .rsvpInfo span{
     text-align: center;
-    width: 50%;
     align-self: center;
     justify-self: center;
+    font-size: 1rem;
 }
 
 .rsvpDue{
@@ -336,21 +772,125 @@ form .sendSuccess span{
 
 /* Footer */
 
-.footer{
+footer{
     display: grid;
     align-content: center;
     justify-content: center;
-    margin: 10px;
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    background: linear-gradient(0deg, rgba(4,0,83,1) 0%, rgba(0,0,158,1) 10%, rgba(53,134,255,1) 100%);
+    color: white;
 }
 
-.footer h3{
+footer .footer{
+    z-index: 101;
+    margin-bottom: 20px;
+}
+
+footer h3{
     text-align: center;
     font-size: 30px;
     margin: 8px;
 }
 
-.footer p{
+footer p{
     font-size: 17px;
     font-weight: lighter;
     letter-spacing: 3px;
+}
+
+footer .wave{
+    position: absolute;
+    top: -75px;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background: url("images/wave.png");
+    background-size: 1000px 75px;
+}
+
+footer .wave#wave1{
+    z-index: 100;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+
+footer .wave#wave2{
+    z-index: 99;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_2 4s linear infinite;
+}
+
+footer .wave#wave3{
+    z-index: 98;
+    opacity: 0.3;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+footer .wave#wave4{
+    z-index: 97;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_2 3s linear infinite;
+}
+
+@keyframes animateWave{
+    0% {
+        background-position-x: 1000px;
+    }
+    100%{
+        background-position-x: 0px;
+    }
+}
+@keyframes animateWave_2{
+    0% {
+        background-position-x: px;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+
+footer .cartoon{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 200;
+}
+
+footer .cartoonIcon{
+    width: 200px;
+    height: 200px;
+    background: url(images/iconFam.png);
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+
+.paralax{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.c1{
+    z-index: -1;
+}
+
+.c2{
+    z-index: -2;
+}
+
+.c3{
+    z-index: -3;
 }
