@@ -141,7 +141,7 @@ section.header {
     }
 
     section .container .sectionText{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
   }
 
@@ -311,7 +311,7 @@ section.history {
 
 @media only screen and (max-width: 800px) {
     .historyText p{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .history .pergaminho{
@@ -366,7 +366,7 @@ section.dream {
 
 @media only screen and (max-width: 800px) {
     .dreamText p{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -547,7 +547,7 @@ section.wedding .title{
 
 @media only screen and (max-width: 800px) {
     .dreamText p{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .wedding .gridTitle{
@@ -555,7 +555,7 @@ section.wedding .title{
     }
     
     .wedding .gridText{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .wedding .weddingText{
@@ -681,11 +681,11 @@ section.honeymoon {
 
 @media only screen and (max-width: 800px) {
     .honeymoon .honeymoonText p{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
     
     .honeymoon .mb{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         margin-bottom: 30px;
     }
 
@@ -872,28 +872,28 @@ form button{
     }
 
     .rsvpInfo span{
-        font-size: 0.6rem;
+        font-size: 0.7rem;
     }
 
     .rsvpDue span{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
     
 
     form{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     form textarea{
-        font-size: 0.6rem;
+        font-size: 0.7rem;
     }
 
     form input{
-        font-size: 0.6rem;
+        font-size: 0.7rem;
     }
     
     form button{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 }
 
