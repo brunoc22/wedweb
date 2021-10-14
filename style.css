@@ -89,17 +89,6 @@ section.header {
     z-index: 3;
 }
 
-.header video {
-    position: absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-
 .mainTitle {
     color: white;
     display: grid;
@@ -133,6 +122,29 @@ section.header {
     letter-spacing: 0px;
 }
 
+@media only screen and (max-width: 800px) {
+    .mainTitle {
+        padding: 0 0 0 20%;
+        width: 80%;
+    }
+
+    h1{
+        font-size: 1.7rem;;
+    }
+
+    .mainTitle h1 {
+        font-size: 4rem;
+    }
+
+    .mainTitle h2 {
+        font-size: 1rem;
+    }
+
+    section .container .sectionText{
+        font-size: 0.7rem;
+    }
+  }
+
 
 /* MENU */
 nav {
@@ -144,6 +156,7 @@ nav {
     position: fixed;
     top: 0;
     height: 100vh;
+    transition: 1s ease-in-out;
 }
 
 .nav-links {
@@ -242,13 +255,11 @@ nav {
     .hamburger {
         display: flex;
     }
-    .mainTitle {
-        padding: 0 15%;
-        width: 70%;
-    }
 
     .nav-links a span{
         display: none;
+        max-width: 0;
+        transition: max-width 1s ease-in-out;
     }
 
     nav#menu.open{
@@ -257,6 +268,7 @@ nav {
 
     nav#menu.open a span{
         display: block;
+        max-width: 500px;
     }
   }
 
@@ -295,6 +307,18 @@ section.history {
     text-align: justify;
     text-indent: 5ch;
     z-index: 5;
+}
+
+@media only screen and (max-width: 800px) {
+    .historyText p{
+        font-size: 0.7rem;
+    }
+
+    .history .pergaminho{
+        width: 240px;
+        height: 180px;
+        margin: 20px;
+    }
 }
 
 /* DREAM */
@@ -338,6 +362,12 @@ section.dream {
     text-align: justify;
     text-indent: 5ch;
     z-index: 500;
+}
+
+@media only screen and (max-width: 800px) {
+    .dreamText p{
+        font-size: 0.7rem;
+    }
 }
 
 /* WEDDING */
@@ -515,6 +545,67 @@ section.wedding .title{
     border: 0;
 }
 
+@media only screen and (max-width: 800px) {
+    .dreamText p{
+        font-size: 0.7rem;
+    }
+
+    .wedding .gridTitle{
+        font-size: 1rem;
+    }
+    
+    .wedding .gridText{
+        font-size: 0.7rem;
+    }
+
+    .wedding .weddingText{
+        grid-template-rows: 1fr 1px 1fr 1px 1fr 1px 1fr;
+        grid-template-columns: 1fr;
+        row-gap: 25px;
+        margin-top: 50px !important;
+    }
+
+    .wedding .weddingText .centro, .wedding .weddingText .linhaHorizontal2{
+        display: none;
+    }
+
+    .wedding .mapLink{
+        font-size: 0.9rem;
+    }
+
+    .wedding .comochegarGrid{
+        display: block;
+    }
+
+    .wedding .placaTexto{
+        font-size: 0.6rem;
+        margin-bottom: 10px;
+    }
+
+    .wedding .placa{
+        width: 200px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+
+    .wedding .mapQR{
+        display: grid;
+    }
+
+    .wedding .mapQRcode{
+        width: 150px;
+        height: 150px;
+        margin-right: 10px;
+        justify-self: center;
+    }
+
+    .wedding #map {
+        height: 200px;
+        width: 100%;
+    }
+
+}
+
 
 /* HONEYMOON */
 
@@ -588,6 +679,22 @@ section.honeymoon {
     background-image: url("images/mbway.png");
 }
 
+@media only screen and (max-width: 800px) {
+    .honeymoon .honeymoonText p{
+        font-size: 0.7rem;
+    }
+    
+    .honeymoon .mb{
+        font-size: 0.7rem;
+        margin-bottom: 30px;
+    }
+
+    .honeymoon .mb .mbIcon{
+        width: 30px;
+        height: 25px;
+    }
+}
+
 /* GALERY */
 
 section.galery {
@@ -633,10 +740,7 @@ section.galery {
     display: flex;
     height: 100%;
     width: calc(calc(calc(var(--img-width-up) + calc(2 * var(--img-width-margin-left))) * 6) + calc(calc(var(--img-width-lie) + calc(2 * var(--img-width-margin-left))) * 17) + calc(calc(var(--img-width-square) + calc(2 * var(--img-width-margin-left))) * 1));
-    animation: galeryScroll 250s infinite linear;
-}
-.galery .galleryTrack:hover .gallerySlider{
-    animation-play-state: paused;
+    animation: galeryScroll 220s infinite linear;
 }
 
 .galery .gallerySlider img{
@@ -659,10 +763,6 @@ section.galery {
 
 .galery .gallerySlider img.square{
     width: var(--img-width-square);
-}
-
-.galery .gallerySlider img:hover{
-    transform: scale(1.3);
 }
 
 @keyframes galeryScroll {
@@ -734,16 +834,6 @@ form button{
     font-weight: bold;
 }
 
-form .sendSuccess{
-    font-size: 15px;
-    justify-self: right;
-    display: none;
-}
-
-form .sendSuccess span{
-    color: var(--color-sec-success);
-}
-
 .rsvpInfo{
     display: grid;
     margin-top: 5%;
@@ -768,6 +858,43 @@ form .sendSuccess span{
     justify-self: center;
     font-size: 1.5rem;
     font-weight: lighter;
+}
+
+@media only screen and (max-width: 800px) {
+    .rsvp .container{
+        display: grid;
+        margin-bottom: 100px;
+    }
+    
+    .rsvp .container > *{
+        width: 60%;
+        justify-self: center;
+    }
+
+    .rsvpInfo span{
+        font-size: 0.6rem;
+    }
+
+    .rsvpDue span{
+        font-size: 0.7rem;
+    }
+    
+
+    form{
+        font-size: 0.7rem;
+    }
+
+    form textarea{
+        font-size: 0.6rem;
+    }
+
+    form input{
+        font-size: 0.6rem;
+    }
+    
+    form button{
+        font-size: 0.7rem;
+    }
 }
 
 /* Footer */
@@ -869,6 +996,31 @@ footer .cartoonIcon{
     background: url(images/iconFam.png);
     background-position: center;
     background-size: cover;
+}
+
+@media only screen and (max-width: 800px) {
+
+    footer{
+        min-height: unset;
+    }
+
+    footer .cartoon{
+        bottom: 10px;
+        right: 10px;
+    }
+
+    footer .cartoonIcon{
+        width: 80px;
+        height: 80px;
+    }
+
+    footer h3{
+        font-size: 1rem;
+    }
+    
+    footer p{
+        font-size: 0.5rem;
+    }
 }
 
 
