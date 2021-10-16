@@ -32,7 +32,7 @@
                 <h1 class="nomes geni">GENI</h1>
                 <h2 class="nomes and"> & </h2>
                 <h1 class="nomes bruno">BRUNO</h1>
-                <h2 class="quandoonde">MAIO 14, 2022  .  PRAIA DA NOVA VAGA  .  COSTA DA CAPARICA</h2>
+                <h2 class="quandoonde">14 MAIO 2022  .  PRAIA DA NOVA VAGA  .  COSTA DA CAPARICA</h2>
             </div>
         </div>
 </section>
@@ -116,7 +116,7 @@
                     <div class="wherewhenBG weddingBG"></div>
                     <div class="gridTitle wherewhenTitle">Quando e Onde?</div>
                     <div class="gridText wherewhenText">
-                        O casamento vai ser realizado na Praia da Nova Vaga, na Costa da Caparica.
+                        O casamento vai ser realizado na Praia da Nova Vaga, na Costa da Caparica dia 14 de Maio.
                     Começamos a cerimónia às 16h, em modo "pé na areia".
                     </div>
                     <div class="mapLink" id="mapLink">
@@ -248,9 +248,11 @@
     </footer>
 
     <div class="hamburger" id="menuBurger">
-        <i class="fa fa-bars"></i>
+        <i class="fa fa-bars" id="hamburgerIcon"></i>
     </div>
+    <div class="menuOverlay" id="menuOverlay"></div>
     <nav id="menu">
+        <div class="menuBase"></div>
         <div class="nav-links">
                 <a href="#header" class="header current"><div class="menuIcon homeIcon"></div><span>HOME</span></a>
                 <a href="#history" class="history"><div class="menuIcon storyIcon"></div><span>HISTÓRIA</span></a>
@@ -271,6 +273,7 @@
         var menuLinks = document.querySelectorAll("nav a");
         var seeMap = document.getElementById("mapLink");
         var menuBurger = document.getElementById("menuBurger");
+        var menuOverlay = document.getElementById("menuOverlay");
         var c1 = document.getElementById("c1");
         var c2 = document.getElementById("c2");
         var c3 = document.getElementById("c3");
@@ -317,9 +320,29 @@
 
         menuBurger.addEventListener("click", function () {
             var menu = document.getElementById("menu");
+            var menuIcon = document.getElementById("hamburgerIcon");
+            var menuOverlay = document.getElementById("menuOverlay");
 
             menu.classList.toggle("open");
+            menuOverlay.classList.toggle("open");
+            
+            if( menu.classList.contains("open")){
+                menuIcon.classList.replace("fa-bars", "fa-times");
+            }else{
+                
+                menuIcon.classList.replace("fa-times", "fa-bars");
+            }
 
+        })
+
+        menuOverlay.addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            var menuIcon = document.getElementById("hamburgerIcon");
+
+            menu.classList.remove("open");
+            menuOverlay.classList.remove("open");
+            menuIcon.classList.replace("fa-times", "fa-bars");
+            
         })
 
     </script>
