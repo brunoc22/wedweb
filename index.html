@@ -24,9 +24,10 @@
         <div class="headerOL"></div> 
         <img src="c1.png" alt="" class="c1 paralax" id="c1">
         <img src="c2.png" alt="" class="c2 paralax" id="c2">
-        <img src="c3.png" alt="" class="c3 paralax" id="c3">-->
-        <div class="headerBG" id="c1"></div>
-        <div class="headerOL"></div>
+        <img src="c3.png" alt="" class="c3 paralax" id="c3">
+        <div class="headerBG" id="c1"></div>-->
+        <div class="headerOL"></div>  
+        <div class="GBLOGOCont"><img src="images/LOGO.png" alt="" class="GBLOGO"></div>
         <div class="mainTitle">
             <div class="mainTitleCont">
                 <h1 class="nomes geni">GENI</h1>
@@ -291,9 +292,6 @@
         var arrowRight = document.getElementById("arrowRight");
         var closeGallery = document.getElementById("closeGallery");
 
-        var c1 = document.getElementById("c1");
-        var c2 = document.getElementById("c2");
-        var c3 = document.getElementById("c3");
 
         window.addEventListener("scroll", function () {
             const offset = window.pageYOffset;
@@ -306,7 +304,7 @@
             c3.style.top = offset * 0.9 + 'px';*/
             c1.style.top = offset * 0.6 + 'px';
             dreamBG.style.top = "calc(-100vh + " + (offset * 0.4 + 'px)');
-            honeymoonBG.style.top = "calc(-200vh + " + (offset * 0.4 + 'px)');
+            honeymoonBG.style.top = "calc(-250vh + " + (offset * 0.4 + 'px)');
 
             for( var i=0; i < sections.length; i++ ){
                 const sectionTop = sections[i].offsetTop;
@@ -410,6 +408,10 @@
         window.addEventListener('load', function () {
             const offset = window.pageYOffset;
             let currentActive = "";
+
+            c1.style.top = offset * 0.6 + 'px';
+            dreamBG.style.top = "calc(-100vh + " + (offset * 0.4 + 'px)');
+            honeymoonBG.style.top = "calc(-250vh + " + (offset * 0.4 + 'px)');
 
             for( var i=0; i < sections.length; i++ ){
                 const sectionTop = sections[i].offsetTop;
