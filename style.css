@@ -807,6 +807,7 @@ section.galery {
     -moz-box-shadow: 15px 15px 7px 0px var(--color-primary-sea);
     box-shadow: 15px 15px 7px 0px var(--color-primary-sea);
     transition: transform 1s ease-in-out;
+    cursor: pointer;
 }
 
 .galery .gallerySlider img.up{
@@ -830,6 +831,141 @@ section.galery {
     }
 
 }
+
+.galleryViewer{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+}
+
+.galleryViewer.active{
+    display: block;
+}
+
+.galleryOverlay{ 
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    cursor: pointer;
+    position: relative;
+    z-index: 2001;
+}
+
+.galleryViewerCont{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-rows: 70%;
+    grid-template-columns: 100px 70% 100px;
+    height: 100%;
+    width: 100%;
+    column-gap: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.galleryViewer .imageViewer{
+    display: flex;
+    justify-content: center;
+}
+
+.galleryViewer img{
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 2001;
+}
+
+.galleryViewer .arrowLeft{
+    display: grid;
+    align-content: center;
+    justify-content: left;
+    cursor: pointer;
+    padding-left: 10px;
+    border-radius: 20px 0 0 20px;
+    position: relative;
+    z-index: 2001;
+}
+
+.galleryViewer .arrowRight{
+    display: grid;
+    align-content: center;
+    justify-content: right;
+    cursor: pointer;
+    padding-right: 10px;
+    border-radius: 0 20px 20px 0;
+    position: relative;
+    z-index: 2001;
+}
+
+.galleryViewer .arrowLeft i.fa-angle-left, .galleryViewer .arrowRight i.fa-angle-right{
+    color: white;
+    font-size: 7rem;
+}
+
+.galleryViewer .arrowLeft i.fa-chevron-up, .galleryViewer .arrowRight i.fa-chevron-down{
+    color: white;
+    font-size: 4rem;
+    display: none;
+}
+
+.galleryViewer .arrowLeft:hover, .galleryViewer .arrowRight:hover, .galleryViewer .closeGallery:hover{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.galleryViewer .closeGallery{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    margin: 20px;
+    z-index: 2002;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.galleryViewer .closeGallery i{
+    font-size: 4rem;
+    color: white;
+    margin: 5px 10px;
+}
+   
+
+@media only screen and (max-width: 800px) {
+
+    .galleryViewerCont{
+        grid-template-rows: 100px 50% 100px;
+        grid-template-columns: 98%;
+        row-gap: 5px;
+    }
+
+    .galleryViewer .arrowLeft, .galleryViewer .arrowRight{
+        justify-self: center;
+        align-content: center;
+        justify-content: center;
+        width: 30%;
+        padding: 0;
+        border-radius: 20px;
+    }
+
+    .galleryViewer .arrowLeft i.fa-angle-left, .galleryViewer .arrowRight i.fa-angle-right{
+        display: none;
+    }
+
+    .galleryViewer .arrowLeft i.fa-chevron-up, .galleryViewer .arrowRight i.fa-chevron-down{
+        display: block;
+    }
+
+    .galleryViewer .closeGallery{
+        margin: 2px;
+    }
+}
+
 
 /* RSVP */
 
