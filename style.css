@@ -812,7 +812,7 @@ section.galery {
 .galery .gallerySlider{
     display: flex;
     height: 100%;
-    width: calc(calc(calc(var(--img-width-up) + calc(2 * var(--img-width-margin-left))) * 6) + calc(calc(var(--img-width-lie) + calc(2 * var(--img-width-margin-left))) * 17) + calc(calc(var(--img-width-square) + calc(2 * var(--img-width-margin-left))) * 1));
+    width: calc(calc(calc(var(--img-width-up) + calc(2 * var(--img-width-margin-left))) * 4) + calc(calc(var(--img-width-lie) + calc(2 * var(--img-width-margin-left))) * 17) + calc(calc(var(--img-width-square) + calc(2 * var(--img-width-margin-left))) * 1));
     animation: galeryScroll 220s infinite linear;
 }
 
@@ -844,7 +844,7 @@ section.galery {
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(calc(calc(calc(var(--img-width-up) + calc(2 * var(--img-width-margin-left))) * -6) + calc(calc(var(--img-width-lie) + calc(2 * var(--img-width-margin-left))) * -14) + calc(calc(var(--img-width-square) + calc(2 * var(--img-width-margin-left))) * -1)));
+        transform: translateX(calc(calc(calc(var(--img-width-up) + calc(2 * var(--img-width-margin-left))) * -4) + calc(calc(var(--img-width-lie) + calc(2 * var(--img-width-margin-left))) * -14) + calc(calc(var(--img-width-square) + calc(2 * var(--img-width-margin-left))) * -1)));
     }
 
 }

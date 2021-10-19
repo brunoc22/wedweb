@@ -174,24 +174,22 @@
                     <div class="imageSlide"><img src="images/s1.jpg" id="s1" alt="" class="galleryImg lie"></div>
                     <div class="imageSlide"><img src="images/s2.jpg" id="s2" alt="" class="galleryImg lie"></div>
                     <div class="imageSlide"><img src="images/s3.jpg" id="s3" alt="" class="galleryImg lie"></div>
-                    <div class="imageSlide"><img src="images/s4.jpg" id="s4" alt="" class="galleryImg up"></div>
+                    <div class="imageSlide"><img src="images/s4.jpg" id="s4" alt="" class="galleryImg lie"></div>
                     <div class="imageSlide"><img src="images/s5.jpg" id="s5" alt="" class="galleryImg lie"></div>
                     <div class="imageSlide"><img src="images/s6.jpg" id="s6" alt="" class="galleryImg lie"></div>
-                    <div class="imageSlide"><img src="images/s7.jpg" id="s7" alt="" class="galleryImg lie"></div>
-                    <div class="imageSlide"><img src="images/s8.jpg" id="s8" alt="" class="galleryImg lie"></div>
-                    <div class="imageSlide"><img src="images/s9.jpg" id="s9" alt="" class="galleryImg up"></div>
-                    <div class="imageSlide"><img src="images/s10.jpg" id="s10" alt="" class="galleryImg lie"></div>
-                    <div class="imageSlide"><img src="images/s11.jpg" id="s11" alt="" class="galleryImg square"></div>
+                    <div class="imageSlide"><img src="images/s7.JPG" id="s7" alt="" class="galleryImg lie"></div>
+                    <div class="imageSlide"><img src="images/s8.jpg" id="s8" alt="" class="galleryImg up"></div>
+                    <div class="imageSlide"><img src="images/s9.jpg" id="s9" alt="" class="galleryImg lie"></div>
+                    <div class="imageSlide"><img src="images/s10.jpg" id="s10" alt="" class="galleryImg square"></div>
+                    <div class="imageSlide"><img src="images/s11.jpg" id="s11" alt="" class="galleryImg lie"></div>
                     <div class="imageSlide"><img src="images/s12.jpg" id="s12" alt="" class="galleryImg up"></div>
                     <div class="imageSlide"><img src="images/s13.jpg" id="s13" alt="" class="galleryImg lie"></div>
                     <div class="imageSlide"><img src="images/s14.jpg" id="s14" alt="" class="galleryImg up"></div>
                     <div class="imageSlide"><img src="images/s15.jpg" id="s15" alt="" class="galleryImg lie"></div>
-                    <div class="imageSlide"><img src="images/s16.jpg" id="s16" alt="" class="galleryImg up"></div>
+                    <div class="imageSlide"><img src="images/s16.jpg" id="s16" alt="" class="galleryImg lie"></div>
                     <div class="imageSlide"><img src="images/s17.jpg" id="s17" alt="" class="galleryImg lie"></div>
-                    <div class="imageSlide"><img src="images/s18.jpg" id="s18" alt="" class="galleryImg lie"></div>
+                    <div class="imageSlide"><img src="images/s18.jpg" id="s18" alt="" class="galleryImg up"></div>
                     <div class="imageSlide"><img src="images/s19.jpg" id="s19" alt="" class="galleryImg lie"></div>
-                    <div class="imageSlide"><img src="images/s20.jpg" id="s20" alt="" class="galleryImg up"></div>
-                    <div class="imageSlide"><img src="images/s21.jpg" id="s21" alt="" class="galleryImg lie"></div>
                     <div class="imageSlide"><img src="images/s1.jpg" alt="" class="galleryImg lie"></div>
                     <div class="imageSlide"><img src="images/s2.jpg" alt="" class="galleryImg lie"></div>
                     <div class="imageSlide"><img src="images/s3.jpg" alt="" class="galleryImg lie"></div>
@@ -388,7 +386,7 @@
                 var innerHTML = imageViewer.innerHTML;
 
                 var photoNum = Number(innerHTML.substring(innerHTML.indexOf("images/s")+8, innerHTML.lastIndexOf(".")));
-                var newNum = (photoNum == 1) ? 21 : (photoNum-1);
+                var newNum = (photoNum == 1) ? 19 : (photoNum-1);
                 var newPhoto = document.getElementById("s"+newNum);
                 imageViewer.innerHTML = newPhoto.outerHTML;
             
@@ -399,7 +397,7 @@
                 var innerHTML = imageViewer.innerHTML;
 
                 var photoNum = Number(innerHTML.substring(innerHTML.indexOf("images/s")+8, innerHTML.lastIndexOf(".")));
-                var newNum = (photoNum == 21) ? 1 : (photoNum+1);
+                var newNum = (photoNum == 19) ? 1 : (photoNum+1);
                 var newPhoto = document.getElementById("s"+newNum);
                 imageViewer.innerHTML = newPhoto.outerHTML;
             
