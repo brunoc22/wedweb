@@ -20,22 +20,9 @@
 
 
     <section class="header" id="header">
-       <!-- <video id="headerVideo" src="images/backgroundBeach.mp4" muted loop autoplay></video>
-        <div class="headerOL"></div> 
-        <img src="c1.png" alt="" class="c1 paralax" id="c1">
-        <img src="c2.png" alt="" class="c2 paralax" id="c2">
-        <img src="c3.png" alt="" class="c3 paralax" id="c3">-->
         <div class="headerBG" id="c1"></div>
         <div class="headerOL"></div>  
         <div class="GBLOGOCont"><img src="images/LOGO.png" alt="" class="GBLOGO"></div>
-        <div class="mainTitle">
-            <div class="mainTitleCont">
-                <h1 class="nomes geni">GENI</h1>
-                <h2 class="nomes and"> & </h2>
-                <h1 class="nomes bruno">BRUNO</h1>
-                <h2 class="quandoonde">14 MAIO 2022  .  PRAIA DA NOVA VAGA  .  COSTA DA CAPARICA</h2>
-            </div>
-        </div>
 </section>
 
 
@@ -295,13 +282,7 @@
         window.addEventListener("scroll", function () {
             const offset = window.pageYOffset;
             let currentActive = "";
-            /*vid.style.top = offset * 0.7 + 'px';
-            menu.style.top = offset + 'px';
-            
-            c1.style.top = offset * 0.4 + 'px';
-            c2.style.top = offset * 0.7 + 'px';
-            c3.style.top = offset * 0.9 + 'px';*/
-            c1.style.top = offset * 0.6 + 'px';
+            c1.style.top = offset * 0.65 + 'px';
             dreamBG.style.top = "calc(-100vh + " + (offset * 0.4 + 'px)');
             honeymoonBG.style.top = "calc(-250vh + " + (offset * 0.4 + 'px)');
 
@@ -358,6 +339,17 @@
             menuIcon.classList.replace("fa-times", "fa-bars");
             
         })
+
+        menuLinks.forEach(link => {
+            link.onclick = function(){
+                var menu = document.getElementById("menu");
+                var menuIcon = document.getElementById("hamburgerIcon");
+
+                menu.classList.remove("open");
+                menuOverlay.classList.remove("open");
+                menuIcon.classList.replace("fa-times", "fa-bars");
+            } 
+        }); 
 
         galleryImgs.forEach(image => {
             image.onclick = function(){
