@@ -585,14 +585,39 @@ section.wedding .title{
     margin-bottom: 10px;
 }
 
+.wedding .mapQR .maps, .wedding .mapQR .waze{
+    display: grid;
+}
+
 .wedding .mapQRcode{
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("images/maps.png");
+    justify-self: center;
+    cursor: pointer;
+}
+
+.wedding .wazeText{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.wedding .wazeQRcode{
+    width: 150px;
+    height: 150px;
     margin-right: 10px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("images/PNVqr.png");
+    background-image: url("images/waze.png");
+    justify-self: center;
+    cursor: pointer;
 }
 
 .wedding .mapCont {
@@ -600,7 +625,7 @@ section.wedding .title{
 }
 
 .wedding #map {
-    height: 300px;
+    height: 330px;
     width: 100%;
     border: 0;
 }
@@ -637,6 +662,10 @@ section.wedding .title{
         display: block;
     }
 
+    .wedding .comochegar{
+        width: 70%;
+    }
+
     .wedding .placaTexto{
         font-size: 0.6rem;
         margin-bottom: 10px;
@@ -649,14 +678,25 @@ section.wedding .title{
     }
 
     .wedding .mapQR{
-        display: grid;
+        display: flex;
     }
 
     .wedding .mapQRcode{
-        width: 150px;
-        height: 150px;
-        margin-right: 10px;
-        justify-self: center;
+        width: 100px;
+        height: 100px;
+    }
+
+    .wedding .wazeQRcode{
+        width: 100px;
+        height: 100px;
+    }
+
+    .wedding .wazeText, .wedding .mapText{
+        font-size: 0.8rem;
+    }
+
+    .wedding .wazeText{
+        margin: 0;
     }
 
     .wedding #map {

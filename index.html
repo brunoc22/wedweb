@@ -3,7 +3,7 @@
     <title>Geni & Bruno Casamento 2022</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Website com informação sobre o casamento de Bruno + Geni">
+    <meta name="description" content="Website com informação sobre o casamento de Geni e Bruno">
     <meta name="author" content="Bruno Camboias">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,8 +123,14 @@
                         <div class="placa placa2"></div>
                     </div>
                     <div class="mapQR">
-                        <div class="mapText">Maps QR Code</div>
-                        <div class="mapQRcode"></div>
+                        <div class="maps">
+                            <div class="mapText">Maps QR Code</div>
+                            <div class="mapQRcode" id="mapQRcode"></div>
+                        </div>
+                        <div class="waze">
+                            <div class="wazeText">Waze QR Code</div>
+                            <div class="wazeQRcode" id="wazeQRcode"></div>
+                        </div>
                     </div>
                     <div class="mapCont" id="beachMap">
                         <div class="mapText">Maps Localização</div>
@@ -277,7 +283,9 @@
         var arrowLeft = document.getElementById("arrowLeft");
         var arrowRight = document.getElementById("arrowRight");
         var closeGallery = document.getElementById("closeGallery");
-
+        var mapQRcode = document.getElementById("mapQRcode");
+        var wazeQRcode = document.getElementById("wazeQRcode");
+        
 
         window.addEventListener("scroll", function () {
             const offset = window.pageYOffset;
@@ -395,6 +403,19 @@
                 imageViewer.innerHTML = newPhoto.outerHTML;
             
         })
+
+        mapQRcode.addEventListener("click", function () {
+                
+            window.open("https://www.google.pt/maps/place/Praia+da+Nova+Vaga/@38.5985515,-9.2155546,15z/data=!3m1!4b1!4m5!3m4!1s0xd1eb53c3ab4bf9f:0x381236825283d0f4!8m2!3d38.5985524!4d-9.2067998?hl=pt-PT").focus();
+            
+        })
+        
+        wazeQRcode.addEventListener("click", function () {
+                
+            window.open("https://waze.com/ul/heyc7w6xuf").focus();
+            
+        })
+
 
         window.addEventListener('load', function () {
             const offset = window.pageYOffset;
